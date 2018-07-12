@@ -13,19 +13,19 @@ import org.testng.annotations.AfterTest;
 public class BaseTest {
 
     protected WebDriver driver;
-    
+
     @BeforeTest
     public void setUp() throws MalformedURLException {
         
-        DesiredCapabilities dc = DesiredCapabilities.chrome();
-
-        if (System.getProperty("browser").equals("firefox"))
-            dc = DesiredCapabilities.firefox();
-
-      //  String host = System.getProperty("seleniumHubHost");
-	    String	host="127.0.0.1";
-        driver = new RemoteWebDriver(new URL("http://" + host + ":4444/wd/hub"), dc);
-        
+//        DesiredCapabilities dc = DesiredCapabilities.chrome();
+//
+//        if (System.getProperty("browser").equals("firefox"))
+//            dc = DesiredCapabilities.firefox();
+//
+//      //  String host = System.getProperty("seleniumHubHost");
+//	    String	host="127.0.0.1";
+//        driver = new RemoteWebDriver(new URL("http://" + host + ":4444/wd/hub"), dc);
+         driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub/"), DesiredCapabilities.chrome());
     }
 
     @AfterTest
